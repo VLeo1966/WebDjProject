@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+
+    <title>
+        {% block title %}
+        CatDjango - Your Site
+        {% endblock %}
+    </title>
+</head>
+<body class="bg-light">
+
+    <!-- Sidebar -->
+    <div class="d-flex">
+        <aside class="bg-dark text-white p-3" style="width: 250px; height: 100vh;">
+            <div class="text-center mb-4">
+                <img src="{% static 'main/img/cat.png' %}" alt="Миленький котёнок" class="img-fluid rounded-circle mb-2" width="150px">
+                <h4 class="text-white">CatDjango</h4>
+            </div>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2">
+                    <a class="nav-link text-white" href="{% url 'home' %}"> Главная</a>
+                </li>
+                <li class="nav-item mb-2">
+                    <a class="nav-link text-white" href="{% url 'page2' %}"> Второстепенная</a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main content -->
+        <main class="p-4 flex-fill">
+            {% block content %}
+            <!-- Your content will go here -->
+            <div class="container">
+                <h1 class="display-4">Welcome to CatDjango</h1>
+                <p class="lead">This is a simple Django application with Bootstrap for styling.</p>
+            </div>
+            {% endblock %}
+        </main>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
