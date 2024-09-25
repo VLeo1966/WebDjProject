@@ -21,5 +21,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('main.urls'))  # Ссылка на приложение main
+    path('', include('main.urls')),  # Ссылка на приложение main
+    path('news/', include('news.urls'))  # Ссылка на приложение news
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
