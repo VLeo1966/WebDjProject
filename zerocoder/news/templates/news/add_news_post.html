@@ -6,29 +6,25 @@
 
 {% block content %}
 <h1>Страница для добавления новостей</h1>
+
 <div>
 
 	<form method="post" class="p-4 border rounded bg-light">
         {% csrf_token %}
             <div class="form-group mb-3">
-                <label for="title">Заголовок новости</label>
-                <input type="text" class="form-control" id="title" placeholder="Введите заголовок новости">
+               {{form.title}}
             </div>
             <div class="form-group mb-3">
-                <label for="description">Краткое описание новости</label>
-                <input type="text" class="form-control" id="description" placeholder="Введите краткое описание">
+               {{form.short_description}}
             </div>
             <div class="form-group mb-3">
-                <label for="content">Содержание новости</label>
-                <textarea class="form-control" id="content" rows="4" placeholder="Введите содержание новости"></textarea>
+                {{form.text}}
             </div>
             <div class="form-group mb-3">
-                <label for="date">Дата публикации</label>
-                <input type="date" class="form-control" id="date">
+                {{form.autor}}
             </div>
             <div class="form-group mb-3">
-                <label for="time">Время публикации</label>
-                <input type="time" class="form-control" id="time">
+               {{form.pub_date}}
             </div>
             <button type="submit" class="btn btn-primary">Добавить новость</button>
     </form>
